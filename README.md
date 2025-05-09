@@ -1,25 +1,49 @@
-Membuatlah program Java yang mensimulasikan sistem ATM sederhana dengan mengimplementasikan Materi yang telah Anda pelajari. Program terdiri dari dua class:
-  BankAccount dan ATMSimulator.
-  Class BankAccount memiliki atribut:
-    • accountNumber (String)
-    • accountHolder (String)
-    • balance (double)
-    • transactionCount (static int) untuk menghitung total transaksi di semua akun
-  Implementasikan:
-    1. Constructor dengan parameter accountNumber dan accountHolder yang menginisialisasi balance dengan 0.
-    2. Constructor dengan parameter accountNumber, accountHolder, dan initialBalance yang memanggil constructor pertama menggunakan keyword this dan kemudian menetapkan balance dengan nilai initialBalance jika nilainya positif.
-    3. Method deposit(double amount) yang menambahkan jumlah ke balance jika positif dan menambah transactionCount.
-    4. Method withdraw(double amount) yang mengurangi jumlah dari balance jika dana mencukupi dan menambah transactionCount. Method ini harus mengembalikan true jika berhasil dan false jika gagal.
-    5. Static method getTransactionCount() yang mengembalikan jumlah total transaksi.
-    6. Method getBalance() yang mengembalikan saldo akun saat ini.
-    7. Method printStatement() yang mencetak informasi akun.
-  Class ATMSimulator harus memiliki method main yang:
-    1. Meminta input dari pengguna untuk nomor akun, nama pemilik, dan saldo awal menggunakan class Scanner
-    2. Membuat objek BankAccount dengan data yang dimasukkan
-    3. Menampilkan menu untuk:
-      1. Deposit
-      2. Tarik Tunai
-      3. Cek Saldo
-      4. Lihat Total Transaksi
-      5. Keluar dari program
-    4. Mengimplementasikan logika untuk setiap opsi menu dengan input dari pengguna
+# ATM Simulator - Sistem ATM Sederhana
+
+Program ini mensimulasikan sistem ATM sederhana menggunakan bahasa pemrograman Java. Program terdiri dari dua kelas utama:
+1. **BankAccount**: Menangani transaksi pada akun bank (deposit, tarik tunai, dan sebagainya).
+2. **ATMSimulator**: Program utama yang berinteraksi dengan pengguna untuk melakukan berbagai transaksi.
+
+## Fitur
+- Menambahkan saldo (Deposit).
+- Menarik saldo (Tarik Tunai).
+- Melihat saldo saat ini.
+- Melihat jumlah total transaksi yang telah dilakukan.
+- Semua transaksi diukur dan dihitung menggunakan metode statis `getTransactionCount()`.
+
+## Cara Penggunaan
+
+1. **Input Akun dan Saldo Awal**
+   - Program akan meminta input untuk nomor akun, nama pemilik, dan saldo awal akun.
+   
+2. **Menu ATM**
+   Setelah itu, pengguna akan diberikan pilihan menu:
+   - **1**: Deposit - Menambah saldo ke akun.
+   - **2**: Tarik Tunai - Mengurangi saldo dengan penarikan tertentu.
+   - **3**: Cek Saldo - Menampilkan saldo terkini akun.
+   - **4**: Lihat Total Transaksi - Menampilkan jumlah total transaksi yang telah dilakukan.
+   - **5**: Keluar - Menutup program.
+
+## Struktur Program
+
+### Kelas BankAccount
+Kelas ini mengelola operasi dasar terkait akun bank, seperti deposit, tarik tunai, dan penghitungan transaksi.
+
+#### Atribut:
+- `accountNumber`: Nomor akun.
+- `accountHolder`: Nama pemilik akun.
+- `balance`: Saldo saat ini.
+- `transactionCount`: Jumlah transaksi yang dilakukan.
+
+#### Method:
+- `deposit(double amount)`: Menambahkan dana ke saldo.
+- `withdraw(double amount)`: Menarik dana dari saldo.
+- `getTransactionCount()`: Mengembalikan jumlah total transaksi.
+- `getBalance()`: Mengembalikan saldo saat ini.
+- `printStatement()`: Mencetak informasi akun.
+
+### Kelas ATMSimulator
+Kelas ini menyediakan antarmuka pengguna untuk berinteraksi dengan sistem ATM, dan menampilkan menu pilihan transaksi.
+
+## Contoh Penggunaan
+
